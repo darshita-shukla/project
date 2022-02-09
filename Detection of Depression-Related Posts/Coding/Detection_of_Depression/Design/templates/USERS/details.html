@@ -1,0 +1,57 @@
+{% extends 'USERS/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+    .details{
+    font-family:'Ubuntu Condensed', sans-serif;
+    font-size:25px;
+    padding:10px;
+    margin:50px 50px 75px 100px;
+    background-color:#ff4500;
+    color:white;
+    border:1px solid white;
+    }
+    .details table tr th{
+background:
+padding:10px;
+}
+
+.details td, th {
+    padding: 8px;
+    TEXT-ALIGN: CENTER;
+}
+input {
+    padding: 1px 0px;
+    font-family:'Ubuntu Condensed', sans-serif;
+text-align:center;
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
+<body>
+
+<table  border="2" class="details">
+    <tr>
+        <td>FIRST NAME</td>
+        <td>{{object.firstname}}</td>
+    </tr>
+    <tr>
+        <td>LAST NAME</td>
+        <td>{{object.lastname}}</td>
+    </tr>
+    <tr>
+        <td>PASSWORD</td>
+        <td>{{object.password}}</td>
+    </tr>
+    <tr>
+        <td>EMAIL ADDRESS</td>
+        <td>{{object.email}}</td>
+    </tr>
+
+
+</table>
+
+
+</body>
+{% endblock %}

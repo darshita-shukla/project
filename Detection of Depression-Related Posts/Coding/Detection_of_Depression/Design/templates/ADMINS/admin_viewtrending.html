@@ -1,0 +1,89 @@
+{% extends 'ADMINS/base1.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+   .viewtopic{
+    position: absolute;
+    top: 297px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 10px;
+    width: 486px;
+    height: 310px;
+    overflow: scroll;
+    float: left;
+}
+
+.viewtopic table{
+    width:30em;
+    text-align:center;
+    border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+    float:left;
+}
+
+.viewtopic table tr th{
+    color:;
+}
+.viewtopic table tr th{
+background:
+padding:10px;
+}
+.viewtopic table tr td{
+background:rgb(0,0,0);
+padding:10px;
+}
+.viewtopic table tr:hover td{
+background:;
+}
+.topicimage{
+border-style: solid;
+    border-width: 1px;
+    height: 359px;
+    width: 720px;
+    border-radius: 10px;
+    margin-top: 132px;
+    margin-left: 613px;
+    background: url("{% static 'gif.gif' %}");
+    background-size: 100%100%;
+    float: left;
+
+}
+
+
+
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
+<body>
+<div class="viewtopic">
+<table>
+    <tr>
+
+
+    </tr>
+    <tr>
+        {% for object in objects %}
+
+
+        <td style="color:yellow">{{object.topics}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+<div class="topicimage"></div>
+</body>
+{% endblock %}

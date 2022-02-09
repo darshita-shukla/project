@@ -1,0 +1,75 @@
+{% extends 'ADMINS/base1.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+html,body,h1,h2,h3,h4,h5,h6{}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+.viewpage{
+     position: absolute;
+    top:188px;
+    left:px;
+    padding:5px;
+    height:400px;
+    width:px;
+    overflow:auto;
+    font-family:'Ubuntu Condensed', sans-serif;
+    }
+    .viewpage table{
+    width:795PX;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewpage table tr th{
+background:rgb(0,0,0);
+padding:5px;
+
+}
+.viewpage table tr td{
+background:rgba(0,0,0,0.5);
+padding:5px;
+}
+.viewpage table tr:hover td{
+background:rgba(0,0,0,0.5);
+}
+body{
+
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
+<body>
+<div class="viewpage">
+<table>
+    <tr>
+        <th style="color:yellow">FIRST NAME</th>
+        <th style="color:yellow">LAST NAME</th>
+        <th style="color:yellow">GENDER</th>
+        <th style="color:yellow">EMAIL</th>
+        <th style="color:yellow">PHONE NUMBER</th>
+
+    </tr>
+    <tr>
+        {% for o in object %}
+        <td style="color:white">{{o.firstname}}</td>
+        <td style="color:white"> {{o.lastname}}</td>
+        <td style="color:white">{{o.gender}}</td>
+        <td style="color:white">{{o.email}}</td>
+        <td style="color:white">{{o.Phone}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+</body>
+{% endblock %}

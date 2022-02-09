@@ -1,0 +1,55 @@
+{% extends 'USERS/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+    .message{
+
+    font-family:'Ubuntu Condensed', sans-serif;
+        padding: 63px;
+    font-size: 36px;
+    }
+    textarea{
+    font-family:'Ubuntu Condensed', sans-serif;
+    font-size:18px;
+    }
+    input{
+        padding: 5px;
+    border-radius: 7px;
+    width: 96px;
+    font-family: cooper;
+    height: 47px;
+    font-size: 21px;
+    }
+    .feedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:280px;
+ width:260px;
+margin-top: -257px;
+    margin-left: 850px;
+
+ background: url("{% static 'post.gif' %}");
+ background-size: 100%100%;
+
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
+<body>
+<form method="POST">
+    {% csrf_token %}
+
+    <table class="message">
+        <tr>
+            <td>Write Something Here</td>
+            <td> <textarea name="message" cols="60" rows="8" ></textarea> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="POST"></td>
+        </tr>
+    </table>
+</form>
+<div class="feedbackimage"></div>
+</div>
+</body>
+{% endblock %}

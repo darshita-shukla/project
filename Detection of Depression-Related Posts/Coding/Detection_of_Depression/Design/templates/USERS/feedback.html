@@ -1,0 +1,93 @@
+{% extends 'USERS/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+body{
+background:;
+}
+   .feedback{
+    position: absolute;
+    top:195px;
+    left:200px;
+    padding:10px;
+    width:500px;
+    font-family:Aldrich;
+
+}
+
+.feedback table{
+    width:30em;
+    text-align:center;
+    border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+
+}
+
+.feedback table tr th{
+    color:;
+    border-radius:10px;
+}
+.feedback table tr th{
+background:
+padding:10px;
+}
+.feedback table tr td{
+background:rgb(0,0,0);
+padding:10px;
+}
+.feedback table tr:hover td{
+background:grey;
+}
+ .feedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:280px;
+ width:260px;
+ margin-top:-240px;
+ margin-left:640px;
+
+ background: url("{% static 'feed.gif' %}");
+ background-size: 100%100%;
+
+}
+
+
+</style>
+<body>
+<div class="feedback">
+    <form method="post" autocomplete="off">
+
+    {% csrf_token %}
+
+    <table>
+        <tr>
+            <td style="color:yellow">NAME </td>
+            <td><input type="text" name="name"> </td>
+        </tr>
+        <tr>
+            <td style="color:yellow">MOBILENUMBER</td>
+            <td ><input type="text" name="mobilenumber"> </td>
+        </tr>
+        <tr>
+            <td style="color:yellow">FEEDBACK</td>
+            <td><textarea name="feedback" cols="40" rows="4"></textarea></td>
+        </tr>
+        <tr>
+        <td colspan="3" style="text-align:center"><input type="submit" name="submit" value="submit" style="background-color:black;color:yellow;" ><br></td>
+    </tr>
+    </table>
+</form>
+    <div class="feedbackimage"></div>
+</div>
+
+</body>
+{% endblock %}
